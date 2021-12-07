@@ -1,54 +1,66 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled from "styled-components";
+import React from 'react';
+import { Wrapper, PlanetWrapper, PlanetInfo, ImageWrapper, Description, ButtonsWrapper, CardsWrapper, Source } from './PlanetDetail.styles';
+import { Button } from 'components/Button/Button';
+import { Title } from 'components/Title/Title';
+import { Card } from 'components/Card/Card';
+import earth from 'assets/images/planet-earth.svg';
+import source from 'assets/images/icon-source.svg';
 
 const PlanetDetail = () => {
   return (
     <Wrapper>
-      <div>
-        <img src="" alt="" />
-        <div>
-          <h2>Planet</h2>
-          <p>description</p>
-          <p>
-            source <a href=""></a>
-          </p>
-          <button>
-            <span>1</span>Overview
-          </button>
-          <button>
-            <span>1</span>Overview
-          </button>
-          <button>
-            <span>1</span>Overview
-          </button>
-        </div>
-      </div>
-      <div className="cards">
-        <div className="card">
-          <p>Info</p>
+      <PlanetWrapper>
+        <PlanetInfo>
+          <ImageWrapper>
+            <img src={earth} alt="" />
+          </ImageWrapper>
+          <Title>Planet</Title>
+          <Description>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, esse harum? Ea, consequuntur quibusdam quasi voluptatem cum quo rem officiis
+            ab, debitis iste voluptatibus facere molestias vel nisi, tenetur laborum. Molestiae facilis, quo possimus ex eius quisquam suscipit unde
+            laborum tempore necessitatibus debitis iusto maxime repellendus
+          </Description>
+          <Source>
+            Source
+            <a href="#">
+              Wikipedia
+              <img src={source} alt="" />
+            </a>
+          </Source>
+          <ButtonsWrapper>
+            <Button>
+              <span>01</span>Overview
+            </Button>
+            <Button>
+              <span>02</span>Structure
+            </Button>
+            <Button>
+              <span>03</span>Surface
+            </Button>
+          </ButtonsWrapper>
+        </PlanetInfo>
+      </PlanetWrapper>
+      <CardsWrapper>
+        <Card>
+          <p>Rotation Time</p>
           <h3>243 days</h3>
-        </div>
-        <div className="card">
-          <p>Info</p>
+        </Card>
+        <Card>
+          <p>Revolution time</p>
           <h3>243 days</h3>
-        </div>
-        <div className="card">
-          <p>Info</p>
+        </Card>
+        <Card>
+          <p>Radius</p>
           <h3>243 days</h3>
-        </div>
-        <div className="card">
-          <p>Info</p>
+        </Card>
+        <Card>
+          <p>Average Temp.</p>
           <h3>243 days</h3>
-        </div>
-      </div>
+        </Card>
+      </CardsWrapper>
     </Wrapper>
   );
 };
-export const Wrapper = styled.div`
-  padding: 5rem 10rem;
-  color: ${({ theme }) => theme.colors.white};
-`;
 
 PlanetDetail.propTypes = {};
 
