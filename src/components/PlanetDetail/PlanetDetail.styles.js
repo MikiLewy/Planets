@@ -37,18 +37,31 @@ export const PlanetInfo = styled.div`
     margin: 50px 0;
   }
 `;
+export const GeologyImg = styled.img`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+`;
 export const ImageWrapper = styled.div`
+  position: relative;
   margin-top: 50px;
   width: 100%;
   text-align: center;
   img {
     width: 60%;
   }
+  ${GeologyImg} {
+    width: 25%;
+  }
   @media (min-width: 720px) {
     width: 100%;
     margin-top: 75px;
     img {
       width: 40%;
+    }
+    ${GeologyImg} {
+      width: 20%;
     }
   }
   @media (min-width: 1200px) {
@@ -61,6 +74,7 @@ export const ImageWrapper = styled.div`
     }
   }
 `;
+
 export const ContentWrapper = styled.div`
   width: 40%;
   display: flex;

@@ -1,7 +1,7 @@
 import React from 'react';
 import background from 'assets/images/background-stars.svg';
 import styled from 'styled-components';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { GlobalStyles } from 'assets/styles/GlobalStyles';
 import { ThemeProvider } from 'styled-components';
 import { theme } from 'assets/styles/theme';
@@ -17,6 +17,7 @@ function App() {
           <Background>
             <Nav />
             <Routes>
+              <Route path="/" element={<Navigate replace to="/planets/mercury" />} />
               <Route path="planets/:id" element={<PlanetDetail />} />
             </Routes>
           </Background>
@@ -33,7 +34,6 @@ export const Wrapper = styled.div`
   overflow: hidden;
   @media (min-width: 720px) {
     height: auto;
-    min-height: 250vh;
   }
   @media (min-width: 1200px) {
     min-height: 100vh;

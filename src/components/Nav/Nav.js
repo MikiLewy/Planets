@@ -18,17 +18,15 @@ const Nav = () => {
         <StyledNav isOpen={isOpen}>
           <StyledList>
             {data.map((planet) => (
-              <>
-                <StyledLink to={`planets/${planet.name}`} className={({ isActive }) => (isActive ? 'active' : '')}>
+              <StyledLink key={planet.name} to={`planets/${planet.name.toLowerCase()}`} className={({ isActive }) => (isActive ? 'active' : '')}>
+                <div>
                   <div>
-                    <div key={planet.name}>
-                      <img src={planet.images.ball} alt={planet.name} />
-                      {planet.name}
-                    </div>
-                    <img src={chevron} alt="" />
+                    <img src={planet.images.ball} alt={planet.name} />
+                    {planet.name}
                   </div>
-                </StyledLink>
-              </>
+                  <img src={chevron} alt="" />
+                </div>
+              </StyledLink>
             ))}
           </StyledList>
         </StyledNav>
